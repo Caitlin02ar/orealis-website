@@ -7,14 +7,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const STEPS = [
+type Step = {
+  step: number;
+  title: string;
+  icon: string;
+  subtitle: string;
+  description: string;
+  bullets?: string[];
+  footer?: string;
+};
+
+const STEPS: Step[] = [
   {
     step: 1,
     title: "Installation",
     icon: "/photos/solutions-1.png",
     subtitle: "Fibre as a continuous sensor",
     description:
-      "Fibre as a continuous sensor. Fibre optic cable is installed along the asset, enabling continuous monitoring along its entire length.",
+      "Fibre optic cable is installed on or near the linear asset, enabling continuous monitoring along its entire length",
   },
   {
     step: 2,
@@ -22,7 +32,7 @@ const STEPS = [
     icon: "/photos/solutions-2.png",
     subtitle: "Light travels through the fibre",
     description:
-      "Light travels through the fibre. A laser signal travels continuously through the fibre optic cable.",
+      "An interrogator sends light pulses through the fibre optic cable.",
   },
   {
     step: 3,
@@ -30,7 +40,7 @@ const STEPS = [
     icon: "/photos/solutions-3.png",
     subtitle: "Light scattered back from imperfections",
     description:
-      "Reflected signals return. Light scattered back from imperfections in the fibre is continuously monitored.",
+      "Light reflections (backscatter) travel back to the interrogator and are continuously measured.",
   },
   {
     step: 4,
@@ -38,15 +48,20 @@ const STEPS = [
     icon: "/photos/solutions-4.png",
     subtitle: "Changes in the environment",
     description:
-      "Changes are detected along the asset. Changes in strain or stress along the fibre alter measurable variations of the backscattered signals.",
+      "Changes in temperature, vibration, or strain along the fibre cause measurable variations in the backscatter signal.",
   },
   {
     step: 5,
     title: "Data Processing",
     icon: "/photos/solutions-5.png",
     subtitle: "Analyzing the data",
-    description:
-      "Insights from sensing technologies. Combines Distributed Acoustic Sensing (DAS), Distributed Temperature Sensing (DTS), and Distributed Strain Sensing (DSS). Low-intrusivity light makes this system safe for use in hazardous environments.",
+    description: "Backscatter data is processed into actionable insights using:",
+    bullets: [
+      "Distributed Temperature Sensing (DTS)",
+      "Distributed Acoustic Sensing (DAS)",
+      "Distributed Strain Sensing (DSS)",
+    ],
+    footer: "Low-intensity light makes the system safe for use in hazardous environments.",
   },
 ];
 
@@ -62,7 +77,6 @@ export default function OurSolutions() {
       const isMobile = window.innerWidth < 768;
 
       if (isMobile) {
-        // Mobile: tiap row muncul sendiri saat scroll
         gsap.set(mobileRowRefs.current, { opacity: 0, y: 32 });
 
         mobileRowRefs.current.forEach((row) => {
@@ -79,7 +93,6 @@ export default function OurSolutions() {
           });
         });
       } else {
-        // Desktop: line progress + icon/content stagger
         const totalSteps = STEPS.length;
 
         gsap.set(lineRef.current, { scaleX: 0, transformOrigin: "left center" });
@@ -122,7 +135,8 @@ export default function OurSolutions() {
   }, []);
 
   return (
-<section id="solutions" ref={sectionRef} className="bg-[var(--color-dark-gray)] pt-10 pb-24 md:py-24 px-6">      <div className="max-w-7xl mx-auto">
+    <section id="solutions" ref={sectionRef} className="bg-[var(--color-dark-gray)] pt-10 pb-24 md:py-24 px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-4">
           <h2 className="text-white text-3xl md:text-5xl font-semibold mb-3">
             OUR SOLUTIONS
@@ -137,11 +151,10 @@ export default function OurSolutions() {
           {STEPS.map((s, i) => (
             <div
               key={s.step}
-               id={s.title.toLowerCase().replace(/\s+/g, "-")}
+              id={s.title.toLowerCase().replace(/\s+/g, "-")}
               ref={(el) => { mobileRowRefs.current[i] = el; }}
               className="scroll-mt-32 flex items-start gap-8"
             >
-              {/* Icon kiri */}
               <div className="flex-shrink-0">
                 <Image
                   src={s.icon}
@@ -152,7 +165,6 @@ export default function OurSolutions() {
                 />
               </div>
 
-              {/* Content kanan */}
               <div className="flex flex-col gap-1">
                 <p className="text-[#BFBFBF] text-xs font-semibold tracking-widest">
                   Step {s.step}
@@ -164,6 +176,19 @@ export default function OurSolutions() {
                 <p className="text-[var(--color-light)] text-sm leading-relaxed font-light mt-1">
                   {s.description}
                 </p>
+                {s.bullets && (
+                  <>
+                    <ul className="mt-1 flex flex-col gap-1">
+                      {s.bullets.map((b) => (
+                        <li key={b} className="text-[var(--color-light)] text-sm font-light flex items-start gap-2">
+                          <span className="mt-2 w-1 h-1 rounded-full bg-[var(--color-light)] flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[var(--color-light)] text-sm font-light mt-2">{s.footer}</p>
+                  </>
+                )}
               </div>
             </div>
           ))}
@@ -171,7 +196,6 @@ export default function OurSolutions() {
 
         {/* ── DESKTOP LAYOUT ── */}
         <div className="hidden md:block">
-          {/* Connector line + icons row */}
           <div className="relative flex items-center justify-between mb-12 mt-10 px-2">
             <div className="absolute top-1/2 left-0 right-0 h-px" />
           </div>
@@ -180,7 +204,7 @@ export default function OurSolutions() {
             {STEPS.map((s, i) => (
               <div
                 key={s.step}
-                 id={s.title.toLowerCase().replace(/\s+/g, "-")}
+                id={s.title.toLowerCase().replace(/\s+/g, "-")}
                 ref={(el) => { iconRefs.current[i] = el; }}
                 className="scroll-mt-32 relative z-10 flex flex-col items-center justify-center gap-2"
               >
@@ -223,6 +247,19 @@ export default function OurSolutions() {
                   <p className="text-[var(--color-light)] text-md leading-relaxed font-light max-w-xs">
                     {s.description}
                   </p>
+                  {s.bullets && (
+                    <>
+                      <ul className="flex flex-col gap-1">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="text-[var(--color-light)] text-md font-light flex items-start gap-2">
+                            <span className="mt-2 w-1 h-1 rounded-full bg-[var(--color-light)] flex-shrink-0" />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-[var(--color-light)] text-md font-light max-w-xs">{s.footer}</p>
+                    </>
+                  )}
                 </div>
               </div>
             ))}
