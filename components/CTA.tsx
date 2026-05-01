@@ -44,13 +44,12 @@ export default function CTA() {
       className="relative py-32 px-6 overflow-hidden min-h-screen flex flex-col items-center justify-center"
     >
       <div className="relative max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mb-24">
-        <h2 className="text-[var(--color-light)] text-3xl sm:text-5xl md:text-7xl font-semibold leading-tight">
-          TURN FIBRE OPTIC DATA{" "}
-          <br className="hidden md:block" />
-          INTO ACTIONABLE INSIGHT
-        </h2>
+       <h2 className="text-[var(--color-light)] text-4xl sm:text-6xl font-medium leading-tight">
+        <span className="block md:whitespace-nowrap">TURN FIBRE OPTIC DATA</span>
+        <span className="block md:whitespace-nowrap">INTO ACTIONABLE INSIGHT</span>
+      </h2>
 
-        <p className="text-[var(--color-light)] text-sm md:text-base max-w-md">
+        <p className="text-[var(--color-light)] text-lg md:text-base max-w-[70%]">
           Let&apos;s discuss how Orealis can support your infrastructure.
         </p>
       </div>
