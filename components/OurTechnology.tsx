@@ -32,7 +32,7 @@ const TECHNOLOGIES = [
 
     export default function OurTechnology() {
     return (
-        <section className="bg-[var(--color-dark)] py-24 px-6 min-h-screen">
+        <section id="technology" className="bg-[var(--color-dark)] py-24 px-6 min-h-screen">
             <div className="max-w-7xl mx-auto">            
                 <h2 className="text-[var(--color-light)] text-3xl md:text-5xl font-semibold mb-14">
                     OUR TECHNOLOGY
@@ -50,18 +50,18 @@ const TECHNOLOGIES = [
                         fill
                         className="object-contain object-bottom-right"/>
                     </div>
-                    <div className="relative z-10 max-w-[75%]">
+                    <div className="relative z-10 max-w-[90%] md:max-w-[75%]">
                         
                         <p className="text-[var(--color-light)] text-[2rem] tracking-widest uppercase mb-3 font-medium">
                             {tech.tag}
                         </p>
-                        <h3 className="text-[var(--color-light)] text-[1.75rem] font-medium mb-3">
+                        <h3 className="text-[var(--color-light)] text-[1.25rem] md:text-[1.75rem] font-medium mb-3 whitespace-nowrap">
                             {tech.title}
                         </h3>
                         <p className="text-[var(--color-light)] text-sm mb-5 leading-relaxed">
                             {tech.description}
                         </p>
-                        <ul className="space-y-2 pb-24 pl-2">
+                        <ul className="space-y-2 pb-4 md:pb-24 pl-2">
                         {tech.points.map((point) => (
                             <li
                             key={point}

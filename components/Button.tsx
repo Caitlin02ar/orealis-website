@@ -7,6 +7,8 @@ type ButtonProps = {
   as?: "button" | "link";
   href?: string;
   className?: string;
+  target?: string;
+  onClick?: () => void;
 };
 
 export default function Button({
@@ -14,14 +16,17 @@ export default function Button({
   as = "button",
   href,
   className = "",
+  target,
+  onClick,
 }: ButtonProps) {
   const baseStyle = `
-    relative inline-flex items-center justify-center
-    px-6 py-3 rounded-xl text-sm font-medium
-    border border-[var(--color-primary)]
-    text-[var(--color-primary)]
-    transition-all duration-300
-  `;
+  relative inline-flex items-center justify-center
+  px-6 py-3 rounded-xl text-sm font-medium
+  border border-[var(--color-primary)]
+  text-[var(--color-primary)]
+  transition-all duration-300
+  w-full md:w-auto
+`;
 
   const glowStyle = `
     shadow-[0_0_8px_rgba(0,211,195,0.4)]
@@ -31,6 +36,21 @@ export default function Button({
   const styles = `${baseStyle} ${glowStyle} ${className}`;
 
   if (as === "link" && href) {
+    const isExternal = href.startsWith("http");
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target={target || "_blank"}
+          rel="noopener noreferrer"
+          className={styles}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={styles}>
         {children}
@@ -38,5 +58,9 @@ export default function Button({
     );
   }
 
-  return <button className={styles}>{children}</button>;
+  return (
+    <button className={styles} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
