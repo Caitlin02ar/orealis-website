@@ -31,7 +31,7 @@ const APPLICATIONS = [
 
 export default function Applications() {
   return (
-    <section className="bg-[var(--color-dark-gray)] py-24 px-6 min-h-screen">
+    <section id="applications" className="bg-[var(--color-dark-gray)] py-24 px-6 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="mb-24">
           <h2 className="text-white text-3xl md:text-5xl font-semibold mb-3">
@@ -56,7 +56,7 @@ export default function Applications() {
                 src={app.image}
                 alt={app.label}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
 
               {/* Mobile: gradient kiri ke kanan */}

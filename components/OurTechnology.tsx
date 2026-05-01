@@ -32,7 +32,7 @@ const TECHNOLOGIES = [
 
     export default function OurTechnology() {
     return (
-        <section id="technology" className="bg-[var(--color-dark)] py-24 px-6 min-h-screen">
+        <section id="technology" className="scroll-mt-32 bg-[var(--color-dark)] py-24 px-6 min-h-screen">
             <div className="max-w-7xl mx-auto">            
                 <h2 className="text-[var(--color-light)] text-3xl md:text-5xl font-semibold mb-14">
                     OUR TECHNOLOGY
@@ -41,7 +41,8 @@ const TECHNOLOGIES = [
                 {TECHNOLOGIES.map((tech) => (
                     <div
                     key={tech.id}
-                    className="relative rounded-2xl overflow-hidden bg-[var(--color-dark-gray)] p-8">
+                    id={tech.id}
+                    className="scroll-mt-32 relative rounded-2xl overflow-hidden bg-[var(--color-dark-gray)] p-8">
                     
                     <div className="absolute bottom-0 right-0 w-[110%] h-[110%] pointer-events-none">
                         <Image

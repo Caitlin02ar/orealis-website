@@ -8,8 +8,9 @@ import Button from "./Button";
 const NAV_ITEMS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
-  { label: "Technology", href: "#technology" },
   { label: "Solutions", href: "#solutions" },
+  { label: "Applications", href:"#applications"},
+  { label: "Technology", href: "#technology" },
 ];
 
 export default function Navbar() {
@@ -61,7 +62,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-12">
           <div className="flex items-center gap-9">
             {NAV_ITEMS.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className="relative text-[var(--color-light)] text-sm tracking-wide
@@ -69,26 +70,25 @@ export default function Navbar() {
                            after:bg-[var(--color-primary)]"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </div>
+
           <Button
-        as="link"
-        href="https://mail.google.com/mail/?view=cm&to=caitlinliadi@gmail.com&subject=Project Inquiry&body=Hello Rob,"
-        target="_blank"
-      >
-        Contact Us
-      </Button>
+                  as="link"
+                  href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob,"
+                  
+                >
+                  Contact Us
+                </Button>
         </div>
 
         {/* MOBILE: Hamburger */}
-       {/* MOBILE: Hamburger */}
         <button
           className="md:hidden flex justify-center items-center w-10 h-10"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          {/* Wrapper yang rotate keseluruhan */}
           <div className={`flex flex-col gap-[6px] transition-all duration-500 ${menuOpen ? "rotate-90" : ""}`}>
             <span className="block h-[2px] w-6 bg-[var(--color-light)] rounded-full" />
             <span className="block h-[2px] w-6 bg-[var(--color-light)] rounded-full" />
@@ -108,7 +108,7 @@ export default function Navbar() {
         `}
       >
         {NAV_ITEMS.map((item) => (
-          <Link
+          <a
             key={item.href}
             href={item.href}
             onClick={() => setMenuOpen(false)}
@@ -116,14 +116,13 @@ export default function Navbar() {
                        hover:text-[var(--color-primary)] transition-colors duration-200"
           >
             {item.label}
-          </Link>
+          </a>
         ))}
+
         <div className="mt-8 w-full max-w-xs">
           <Button
                   as="link"
-                  href="https://mail.google.com/mail/?view=cm&to=caitlinliadi@gmail.com&subject=Project Inquiry&body=Hello Rob,"
-                  target="_blank"
-                >
+                  href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob," >
                   Contact Us
                 </Button>
         </div>

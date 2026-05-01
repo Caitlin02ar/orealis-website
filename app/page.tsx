@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <OurTechnology />
-      <Applications />
       <OurSolutions />
+      <Applications />
+      <OurTechnology />
       <WhyOrealis />
       <CTA/>
       <Footer/>

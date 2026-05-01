@@ -24,7 +24,7 @@ export default function About() {
           <span className="font-bold">fibre optic specialist</span>{" "}
           with extensive experience across complex, multi-stakeholder
           projects in sectors including{" "}
-          <span className="font-bold">superannuation, oil and gas, and infrastructure</span>.
+          <span className="font-bold">superyachts, oil and gas, and infrastructure</span>.
         </p>
 
         <p className="text-[var(--color-light)] max-w-2xl 

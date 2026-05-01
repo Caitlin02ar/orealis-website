@@ -24,13 +24,13 @@ export default function Hero() {
             to improve linear asset up-time and reduce operating cost
           </p>
           <div className="mt-6 w-full max-w-xs mx-auto">
-            <Button
-                    as="link"
-                    href="https://mail.google.com/mail/?view=cm&to=caitlinliadi@gmail.com&subject=Project Inquiry&body=Hello Rob,"
-                    target="_blank"
-                  >
-                    Contact Us
-            </Button>
+           <Button
+                   as="link"
+                   href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob,"
+                   
+                 >
+                   Contact Us
+                 </Button>
           </div>
         </div>
       </div>

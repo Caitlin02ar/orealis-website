@@ -53,14 +53,14 @@ export default function WhyOrealis() {
         onEnter: () => {
           gsap.to("body", {
             backgroundColor: "#0e1212",
-            duration: 1.2,
+            duration: 2.4,
             ease: "power2.inOut",
           });
         },
         onLeaveBack: () => {
           gsap.to("body", {
             backgroundColor: "#1F1F1F",
-            duration: 1.2,
+            duration: 2.4,
             ease: "power2.inOut",
           });
         },
@@ -69,7 +69,7 @@ export default function WhyOrealis() {
       gsap.to(cardRefs.current, {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 2,
         ease: "power2.out",
         stagger: 0.3,
         scrollTrigger: {

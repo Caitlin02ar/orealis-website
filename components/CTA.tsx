@@ -43,7 +43,7 @@ export default function CTA() {
       ref={sectionRef}
       className="relative py-32 px-6 overflow-hidden min-h-screen flex flex-col items-center justify-center"
     >
-      <div className="relative max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mb-24">
+      <div className="relative max-w-[95%] mx-auto text-center flex flex-col items-center gap-6 mb-24">
        <h2 className="text-[var(--color-light)] text-4xl sm:text-6xl font-medium leading-tight">
         <span className="block md:whitespace-nowrap">TURN FIBRE OPTIC DATA</span>
         <span className="block md:whitespace-nowrap">INTO ACTIONABLE INSIGHT</span>
@@ -56,8 +56,8 @@ export default function CTA() {
 
       <Button
         as="link"
-        href="https://mail.google.com/mail/?view=cm&to=caitlinliadi@gmail.com&subject=Project Inquiry&body=Hello Rob,"
-        target="_blank"
+        href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob,"
+        
       >
         Contact Us
       </Button>
