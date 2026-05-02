@@ -12,7 +12,7 @@ export default function Hero() {
           loop
           playsInline
           className="absolute w-full h-full object-cover scale-110 pt-16 md:pt-44 bg-[var(--color-dark-gray)] [object-position:center_-100px] md:object-top">
-          <source src="/video/hero-video-bg.webm" type="video/webm" />
+          <source src="/video/hero-bg.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           
