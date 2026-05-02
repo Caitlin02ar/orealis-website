@@ -76,7 +76,7 @@ export default function Navbar() {
 
           <Button
                   as="link"
-                  href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob,"
+                  href="#contact"
                   
                 >
                   Contact Us
@@ -122,7 +122,7 @@ export default function Navbar() {
         <div className="mt-8 w-full max-w-xs">
           <Button
                   as="link"
-                  href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob," >
+                  href="#contact">
                   Contact Us
                 </Button>
         </div>

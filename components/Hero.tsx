@@ -26,8 +26,7 @@ export default function Hero() {
           <div className="mt-6 w-full max-w-xs mx-auto">
            <Button
                    as="link"
-                   href="mailto:rob.crawford@orealis.com.au?subject=Project%20Inquiry&body=Hello%20Rob,"
-                   
+                   href="#contact"
                  >
                    Contact Us
                  </Button>
