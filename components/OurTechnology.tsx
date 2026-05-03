@@ -130,7 +130,7 @@ export default function OurTechnology() {
   }, []);
 
   return (
-    <section id="solutions" ref={sectionRef} className="bg-[var(--color-dark-gray)] pt-10 pb-24 md:py-24 px-6 overflow-hidden">
+    <section id="technology" ref={sectionRef} className="bg-[var(--color-dark-gray)] pt-10 pb-24 md:py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-4">
           <h2 className="text-white text-3xl md:text-5xl font-semibold mb-3">
