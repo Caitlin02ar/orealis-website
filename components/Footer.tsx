@@ -11,12 +11,10 @@ const FOOTER_LINKS = {
   Home: [{ label: "Converting Light Into Insight", href: "#hero" }],
   About: [{ label: "Fibre optic specialist", href: "#about" }],
   "Our Solutions": [
-    { label: "Installation", href: "#installation" },
-    { label: "Light Transmission", href: "#light-transmission" },
-    { label: "Backscatter Detection", href: "#backscatter-detection" },
-    { label: "Environment Response", href: "#environmental-response" },
-    { label: "Data Processing", href: "#data-processing" },
+    { label: "CIQ - Conveyor Monitoring", href: "#ciq" },
+    { label: "FlowProtect - Pipeline Leak Detection", href: "#flowprotect" },
   ],
+  
   Applications: [
     { label: "Pipelines", href: "#pipelines" },
     { label: "Rail & Haul Roads", href: "#rail" },
@@ -24,8 +22,11 @@ const FOOTER_LINKS = {
     { label: "Conveyors", href: "#conveyors" },
   ],
   "Our Technology": [
-    { label: "CIQ - Conveyor Monitoring", href: "#ciq" },
-    { label: "FlowProtect - Pipeline Leak Detection", href: "#flowprotect" },
+    { label: "Installation", href: "#installation" },
+    { label: "Light Transmission", href: "#light-transmission" },
+    { label: "Backscatter Detection", href: "#backscatter-detection" },
+    { label: "Environment Response", href: "#environmental-response" },
+    { label: "Data Processing", href: "#data-processing" },
   ],
   
   Contact: [{ label: "rob.crawford@orealis.com.au", href: "#contact" }],
@@ -39,6 +40,8 @@ export default function Footer() {
       ScrollTrigger.create({
         trigger: footerRef.current,
         start: "top 80%",
+        end:"+=1500",
+        scrub:5,
         onEnter: () => {
           gsap.to(document.body, { backgroundColor: "#2D2D2D", duration: 1.2, ease: "power2.inOut" });
         },

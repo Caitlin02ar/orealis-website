@@ -16,7 +16,8 @@ export default function CTA() {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top 80%",
-        end: "top 20%",
+        end: "+=1500",
+        scrub:5,
         onEnter: () => {
           gsap.to("body", {
             backgroundColor: "#0e1212",
@@ -70,7 +71,7 @@ export default function CTA() {
         <p className="text-[var(--color-light)] text-sm md:text-base underline">rob.crawford@orealis.com.au</p>
         {/* <Link href="#" className="text-[var(--color-light)] text-sm md:text-base underline">
           rob.crawford@orealis.com.au
-        </Link> */}
+        </Link> */} 
       </div>
     </section>
   );
