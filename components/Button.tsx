@@ -8,7 +8,7 @@ type ButtonProps = {
   href?: string;
   className?: string;
   target?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void; // Updated type
 };
 
 export default function Button({
@@ -45,6 +45,7 @@ export default function Button({
           target={target || "_blank"}
           rel="noopener noreferrer"
           className={styles}
+          onClick={onClick} // Added this
         >
           {children}
         </a>
@@ -52,7 +53,7 @@ export default function Button({
     }
 
     return (
-      <Link href={href} className={styles}>
+      <Link href={href} className={styles} onClick={onClick}> {/* Added this */}
         {children}
       </Link>
     );
